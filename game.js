@@ -82,11 +82,18 @@ function getNewQuestion(){
         console.log("Business Facing "+Bussiness_Facing)
         console.log("High Abstraction" +High_Abstraction)
         console.log("Low Abstraction "+Low_Abstraction)
+
+        let pTotal = Engineering_Facing + Bussiness_Facing + High_Abstraction + Low_Abstraction;
+
+        let Engineering_Facing_Per = Math.round(Engineering_Facing/pTotal * 100);
+        let Bussiness_Facing_Per = Math.round(Bussiness_Facing/pTotal * 100);
+        let High_Abstraction_Per = Math.round(High_Abstraction/pTotal * 100);
+        let Low_Abstraction_Per = Math.round(Low_Abstraction/pTotal * 100);
         
         
         resultchart.style.display = "block";
         arrow_down.style.display = "block";
-        var xValues = ["High Abstraction", "Engineering-Facing", "Bussiness-Facing ", "Low Abstraction"];
+        var xValues = ["High Abstraction "+High_Abstraction_Per+"%", "Engineering-Facing "+Engineering_Facing_Per+"%", "Bussiness-Facing "+ Bussiness_Facing_Per+"%", "Low Abstraction "+Low_Abstraction_Per+"%"];
         var yValues = [High_Abstraction,Engineering_Facing,Bussiness_Facing,Low_Abstraction];
         // // var yValues = [High_Abstraction, Engineering_Facing, Bussiness_Facing, Low_Abstraction];
         var barColors = [
@@ -108,11 +115,31 @@ function getNewQuestion(){
         options: {
             title: {
             display: true,
-            text: "Your Product Manager Spectrum"
+            text: "Your Product Manager Spectrum",
+            fontSize: 20,
+            plugins:{         
+                datalabels: {
+                  formatter: function(value, context) {                  
+                    return Math.round(value/context.chart.getDatasetMeta(0).total * 100) + "%" ;
+                  }
+                }
+            }},
+
+            legend: {
+                display:true, position:'right',
+                labels: {
+                    boxWidth: 15,
+                    padding: 27,
+                    pieceLabel: {
+                        mode:'percentage',
+                        render:'value',
+                        //position: 'outside'
+                    }
+                }
             }
         }
         });
-    }
+}
 
     questionCounter++;
     const questionIndex = Math.floor(Math.random() * availableQuestions.length)
