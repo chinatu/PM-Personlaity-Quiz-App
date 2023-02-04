@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://kit.fontawesome.com/6cff46ea0d.js" crossorigin="anonymous"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+    <link rel="stylesheet" href="/game.css">
+    <title>Quick Quiz -> Play</title>
+</head>
+<body>
+    <div id="arrow-down">
+        <i class="fa-solid fa-arrow-down"></i>
+    </div>
+    <div class="container">
+        <div id="game" class="justify-center flex-column">
+            <h3 id="question">When you think of a product, which of the following comes to mind?</h2>
+            <div class="choice-container">
+                <p class="choice-prefix">A.</p>
+                <p class="choice-text" data-number="1">The technicalities behind basic feature and how 
+                    to make scale retention by improving features</p>
+            </div>
+
+            <div class="choice-container">
+                <p class="choice-prefix">B.</p>
+                <p class="choice-text" data-number="2">How a product fits into market interest,
+                     finding market fits. Identifying product gaps and utilizing analytics to achieve this</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="result-chart" class="justify-center flex-column">
+
+        <canvas id="myChart" 
+        style="height: 50vh;"
+            ></canvas>
+
+            <a href="./index.html" style="text-decoration: none;"><p class="btn-retry justify-center flex-column">Go Back To Quiz<p></a>
+    </div>
+
+    <script type="module" src="/game.js"></script>
+</body>
+</html>
