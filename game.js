@@ -44,7 +44,7 @@ let questions = [
     },
     {
         question: "Which of these best describe the needs of your user base?",
-        choice1: "More engineering inclined. It\\'s centered on the use and technical functionalities of a product",
+        choice1: "More engineering inclined. It\'s centered on the use and technical functionalities of a product",
         choice2: "Business inclined. It is centered on an enterprise specialty software. Where you have to think about market impact, scalability, type of business model etc"
         //choice1: Low Abstraction 
         //choice2: Low abstraction business facing
