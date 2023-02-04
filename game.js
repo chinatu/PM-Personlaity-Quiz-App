@@ -123,20 +123,7 @@ function getNewQuestion(){
                     return Math.round(value/context.chart.getDatasetMeta(0).total * 100) + "%" ;
                   }
                 }
-            }},
-
-            legend: {
-                display:true, position:'right',
-                labels: {
-                    boxWidth: 15,
-                    padding: 27,
-                    pieceLabel: {
-                        mode:'percentage',
-                        render:'value',
-                        //position: 'outside'
-                    }
-                }
-            }
+            }}
         }
         });
 }
